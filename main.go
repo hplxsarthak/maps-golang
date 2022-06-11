@@ -3,26 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	// First way of defining map
+
 	colors := map[string]string {
 		"red" : "#ff0000",
 		"green" : "#ff2343",
+		"white" : "000000",
+		"black" : "ffffff",
 	}
 
-	// Second way of defining map
-	var vehicles map[string]int
+	printMap(colors)
+}
 
-	// Third way of defining map
-	electronics := make(map[string]string)
-
-	electronics["mobile"] = "android"
-	electronics["laptop"] = "mac"
-
-
-	fmt.Println(colors)
-	fmt.Println(vehicles)
-	fmt.Println(electronics)
-
-	delete(electronics, "mobile")
-	fmt.Println(electronics)
+func printMap (c map[string]string) {
+	for color, hex := range c {
+		fmt.Println("The hex code for", color, "is", hex)
+	}
 }
